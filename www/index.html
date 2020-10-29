@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8">
+    <title>JiggleSoft's Atari 2600 Image Converter</title>
+    <link rel = "stylesheet" type = "text/css" href = "index.css">
+    <script src="index.js"></script>
+  </head>
+  <body onload="afterLoad();">
+    <div id="page">
+
+      <h1>JiggleSoft's Atari 2600 Image Converter</h1>
+
+      <table border="1px">
+        <tr><th colspan="3">Source Image</th></tr>
+
+        <tr>
+          <td colspan="3"><canvas width="320" height="200" style="background-color:lightgray;"></td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <b>Image Location: </b><input><button>Load URL</button><button>Load File</button><br>
+            <b>Dimensions: </b><input><br>
+          </td>
+        </tr>
+
+        <tr>
+          <th>Atari Target Image</th>
+          <th width="32px">&nbsp;</th>
+          <th>Atari Image Achieved</th>
+        </tr>
+
+        <tr>
+          <td><canvas width="484" height="312" style="background-color:red;"></td>
+          <td>&nbsp;</td>
+          <td><canvas width="484" height="312" style="background-color:green;">
+        </tr>
+
+        <tr>
+          <td colspan="3"><b>Options</b><br>
+            <b>TV Std: </b><select><option value="PAL">PAL</option><option value="SECAM">SECAM</option><option value="NTSC">NTSC</option></select>Atari Details: <input value="Fake progressive; 242 x 312; (312p); 50Hz; Aspect 4:3"><br>
+            <b>Display Elements: </b><select><option value="PF">PLAYFIELD</option><option value="PL">PLAYER (SPRITES)</option><option value="HYBRID">HYBRID (PF/PL/ML/BL)</option></select><br>
+            <b>Display Dimensions: </b>Width: <input> Height: <input><br>
+<b>Method:  </b><select><option value="BW">BLACK & WHITE</option><option value="GS">GREYSCALE (4)</option></select><br>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <b>Generated Code</b>
+            Tool: <select><option value="DASM">DASM</option><option value="CA65">CA65</option></select>
+            Type: <select><option value="DATA">DATA</option><option value="CODE">CODE</option></select>
+            Executable: <input type="checkbox">
+            <button>Generate</button>
+            <button>Select Output</button><br>
+            <input><br>
+            <button>Download Binary</button>
+            <button>Save Binary</button>
+          </td>
+        </tr>
+      </table>
+
+      <h2>Coded by Justin Lane (<a href="mailto:atari2600@jigglesoft.co.uk">atari2600@jigglesoft.co.uk</a>)</h2>
+    </div>
+  </body>
+</html>
