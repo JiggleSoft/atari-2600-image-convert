@@ -15,13 +15,15 @@
         <tr><th colspan="3">Source Image</th></tr>
 
         <tr>
-          <td colspan="3"><canvas width="320" height="200" style="background-color:lightgray;"></td>
+          <td colspan="3"><img src="source-image-default.png"></td>
         </tr>
 
         <tr>
           <td colspan="3">
-            <b>Image Location: </b><input><button>Load URL</button><button>Load File</button><br>
-            <b>Dimensions: </b><input><br>
+            <table class="form">
+              <tr><td><b>Image Location:</b></td><td>&nbsp;</td><td><input class="fill"></td><td>&nbsp;</td><td><button class="fill">Load URL</button></td><td>&nbsp;</td><td><button class="fill">Load File</button><br></td></tr>
+              <tr><td><b>Image Details:</b></td><td>&nbsp;</td><td colspan="5"><input class="fill"></td></tr>
+            </table>
           </td>
         </tr>
 
@@ -37,25 +39,63 @@
           <td><canvas width="484" height="312" style="background-color:green;">
         </tr>
 
+        <tr><th colspan="3">Options</th></tr>
+
         <tr>
-          <td colspan="3"><b>Options</b><br>
-            <b>TV Std: </b><select><option value="PAL">PAL</option><option value="SECAM">SECAM</option><option value="NTSC">NTSC</option></select>Atari Details: <input value="Fake progressive; 242 x 312; (312p); 50Hz; Aspect 4:3"><br>
-            <b>Display Elements: </b><select><option value="PF">PLAYFIELD</option><option value="PL">PLAYER (SPRITES)</option><option value="HYBRID">HYBRID (PF/PL/ML/BL)</option></select><br>
-            <b>Display Dimensions: </b>Width: <input> Height: <input><br>
-<b>Method:  </b><select><option value="BW">BLACK & WHITE</option><option value="GS">GREYSCALE (4)</option></select><br>
+          <td colspan="3"><b></b><br>
+            <b>TV Std: </b><select><option value="PAL">PAL</option><option value="SECAM">SECAM</option><option value="NTSC">NTSC</option></select><br>
+            <b>Display Elements: </b><select><option value="PF">PLAYFIELD</option><option value="PL">PLAYER (SPRITES)</option><option value="HY">HYBRID (PF/PL/ML/BL)</option></select><br>
+            <div id="display-element-options-PF">
+            <b>Width: </b><select><option value="PF40">160 (40 x 4 wide)</option><option value="PF32">128 (32 x 4 wide)</option></select>
+            <b>Line Count: </b><input><b>Pixel Height: </b><input><br>
+            <b>Method: </b><select>
+              <option value="BW">BLACK & WHITE</option>
+              <option value="G2">GREYSCALE (2)</option>
+              <option value="G4">GREYSCALE (4)</option>
+              <option value="C2">COLOUR (2)</option>
+              <option value="C4">COLOUR (4)</option>
+            </select><br>
+<b>Background Colours: </b><select><option value="1COL">Single Colour</option><option value="NCOL">Multiple Colours</option><option value="ACOL">Automatic Colours</option></select>
+<b>Background Colour Line Size: </b><input><br>
+<b>Foreground Colours: </b><select><option value="1COL">Single Colour</option><option value="NCOL">Multiple Colours</option><option value="ACOL">Automatic Colours</option></select>
+<b>Foreground Colour Line Size: </b><input><br>
+            </div>
+            <div id="display-element-options-PL">
+            <b>Width: </b><select><option value="PF40">160 (40 x 4 wide)</option><option value="PF32">128 (32 x 4 wide)</option></select>
+            <b>Line Count: </b><input><b>Pixel Height: </b><input><br>
+            <b>Method:  </b><select><option value="BW">BLACK & WHITE</option><option value="GS">GREYSCALE (4)</option><option value="GS">GREYSCALE (4)</option><option value="GS">GREYSCALE (4)</option></select><br>
+<b>Background Colours: </b><select><option value="1COL">Single Colour</option><option value="NCOL">Multiple Colours</option><option value="ACOL">Automatic Colours</option></select>
+<b>Background Colour Line Size: </b><input><br>
+<b>Foreground Colours: </b><select><option value="1COL">Single Colour</option><option value="NCOL">Multiple Colours</option><option value="ACOL">Automatic Colours</option></select>
+<b>Foreground Colour Line Size: </b><input><br>
+            </div>
+            <div id="display-element-options-HY">
+              <b><i>THIS DISPLAY ELEMENTS OPTION IS NOT CURRENTLY SUPPORTED</i></b>
+            </div>
           </td>
         </tr>
+
+        <tr><th colspan="3">Generator</th></tr>
+
         <tr>
           <td colspan="3">
-            <b>Generated Code</b>
-            Tool: <select><option value="DASM">DASM</option><option value="CA65">CA65</option></select>
-            Type: <select><option value="DATA">DATA</option><option value="CODE">CODE</option></select>
+            <b>Tool: </b><select><option value="DASM">DASM</option><option value="CA65">CA65</option></select>
+            <b>Type: </b><select><option value="DATA">DATA</option><option value="CODE">CODE</option></select>
             Executable: <input type="checkbox">
             <button>Generate</button>
             <button>Select Output</button><br>
             <input><br>
+            <button>Download</button>
+            <button>Save As</button>
+          </td>
+        </tr>
+
+        <tr><th colspan="3">Compiler</th></tr>
+
+        <tr>
+          <td colspan="3">
             <button>Download Binary</button>
-            <button>Save Binary</button>
+            <button>Save As</button>
           </td>
         </tr>
       </table>

@@ -17,8 +17,23 @@ table {
     margin-right: auto;
 }
 
+table .form {
+    width: 100%
+}
+
 td {
     text-align: left;
 }
 
+#display-element-options-PL {
+    display: none;
+}
+
+#display-element-options-HY {
+    display: none;
+}
+
+.fill {
+    width: 97%;
+}
 
